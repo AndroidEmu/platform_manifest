@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
-           fetch="https://android.googlesource.com"
+  <!--remote  name="aosp"
+           fetch="https://aosp.tuna.tsinghua.edu.cn/"
+           review="https://android-review.googlesource.com/" /-->
+<remote  name="aosp"
+           fetch="git://mirrors.ustc.edu.cn/aosp/"
            review="https://android-review.googlesource.com/" />
-
+		   
   <remote  name="androvm"
-           fetch="./" />
+           fetch="https://github.com/xujb/" />
 
   <remote  name="github"
            fetch="https://github.com/" />
+		   
+  <remote  name="android-x86"
+           fetch="git://git.osdn.net/gitroot/android-x86/" />
 
   <default revision="refs/tags/android-4.4.4_r1"
            remote="aosp"
@@ -20,12 +26,12 @@
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="platform/art" />
-  <project path="bionic" remote="androvm" name="platform_bionic" revision="genymotion-4.4.4_r1" groups="pdk" />
+  <project path="bionic" remote="androvm" name="platform_bionic" revision="genymotion-4.4_r1" groups="pdk" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" remote="androvm" name="platform_bootable_diskinstaller" revision="genymotion-4.4.4_r1" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="cts" remote="androvm" name="platform_cts" revision="genymotion-4.4.4_r1" groups="cts" />
-  <project path="dalvik" remote="androvm" name="platform_dalvik" revision="genymotion-4.4.4_r1" />
+  <project path="dalvik" remote="androvm" name="platform_dalvik" revision="genymotion-4.4.2_r1" />
   <project path="developers/build" name="platform/developers/build" />
   <project path="developers/demos" name="platform/developers/demos" />
   <project path="developers/docs" name="platform/developers/docs" />
@@ -125,7 +131,16 @@
   <project path="external/genext2fs" name="platform/external/genext2fs" />
   <project path="external/giflib" name="platform/external/giflib" />
   <project path="external/google-diff-match-patch" name="platform/external/google-diff-match-patch" />
-  <project path="external/grub" remote="androvm" name="platform_external_grub" revision="genymotion-4.2.2_r1.2" />
+  
+  <!--github上找不到此库，直接先使用aosp版本
+  github上备选：https://github.com/omapzoom/platform-external-grub、
+  https://github.com/AiC-Project/platform_external_grub、
+  https://github.com/android-ia/platform_external_grub
+  https://github.com/xin3liang/platform_external_grub/commits/master、
+  -->
+  <!--project path="external/grub" remote="androvm" name="platform_external_grub" revision="genymotion-4.2.2_r1.2" /-->
+  <project path="external/grub" name="platform/external/grub" />
+  
   <project path="external/gtest" name="platform/external/gtest" groups="pdk" />
   <project path="external/guava" name="platform/external/guava" />
   <project path="external/hamcrest" name="platform/external/hamcrest" />
@@ -240,14 +255,14 @@
   <project path="external/valgrind" name="platform/external/valgrind" groups="pdk" />
   <project path="external/webp" name="platform/external/webp" />
   <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
-  <project path="external/wpa_supplicant_8" remote="androvm" name="platform_external_wpa_supplicant_8" groups="pdk" revision="genymotion-4.4.4_r1" />
+  <project path="external/wpa_supplicant_8" remote="androvm" name="platform_external_wpa_supplicant_8" groups="pdk" revision="genymotion-4.4.2_r1" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" />
   <project path="external/yaffs2" name="platform/external/yaffs2" groups="pdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" />
-  <project path="frameworks/av" remote="androvm" name="platform_frameworks_av" revision="genymotion-4.4.4_r1" groups="pdk" />
-  <project path="frameworks/base" remote="androvm" name="platform_frameworks_base" revision="genymotion-4.4.4_r1" />
+  <project path="frameworks/av" remote="androvm" name="platform_frameworks_av" revision="genymotion-4.3_r3.1" groups="pdk" />
+  <project path="frameworks/base" remote="github" name="AndroidEmu/platform_frameworks_base" revision="genymotion-4.4.4_r1" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -279,7 +294,7 @@
   <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="broadcom_wlan" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
-  <project path="hardware/libhardware" remote="androvm" name="platform_hardware_libhardware" revision="genymotion-4.4.4_r1" groups="pdk" />
+  <project path="hardware/libhardware" remote="androvm" name="platform_hardware_libhardware" revision="genymotion-4.4.2_r1" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
   <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom" />
   <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
@@ -335,7 +350,12 @@
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" remote="androvm" name="platform_packages_apps_Settings" revision="genymotion-4.4.4_r1" />
+  <!--github上找不到此库
+  暂时用aosp的或android x86的
+  -->
+  <!-- <project path="packages/apps/Settings" remote="androvm" name="platform_packages_apps_Settings" revision="genymotion-4.4.4_r1" /> -->
+  <!-- <project path="packages/apps/Settings" name="platform/packages/apps/Settings" /> -->
+  <project path="packages/apps/Settings" remote="android-x86" name="packages-apps-Settings" revision="kitkat-x86" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
@@ -417,6 +437,9 @@
   <project path="prebuilts/runtime" name="platform/prebuilts/runtime" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
+  <!--有4.4.2版本：genymotion-4.4.2_r1
+  但manifest 4.4.4版本使用了官方版本
+  -->
   <project path="sdk" name="platform/sdk" />
   <project path="system/core" remote="androvm" name="platform_system_core" revision="genymotion-4.4.4_r1" groups="pdk" />
   <project path="system/extras" remote="androvm" name="platform_system_extras" revision="genymotion-4.4.4_r1" groups="pdk" />
@@ -441,10 +464,13 @@
   <!-- File manager from CyanogenMod !-->
   <project path="packages/apps/CMFileManager" remote="github" name="CyanogenMod/android_packages_apps_CMFileManager" revision="cm-11.0" />
   <!-- Super user app & dependencies from Koushik Dutta !-->
-  <project path="external/apps/Superuser" remote="androvm" name="platform_packages_apps_Superuser" revision="genymotion-4.4.4_r1" />
+  <project path="external/apps/Superuser" remote="androvm" name="platform_packages_apps_Superuser" revision="genymotion-4.4.2_r1" />
   <project path="external/apps/Widgets" remote="github" name="koush/Widgets" revision="master" />
   <!-- HD videos support from android-x86 !-->
-  <project path="external/ffmpeg" remote="androvm" name="platform_external_ffmpeg" revision="kitkat-x86" />
-  <project path="external/stagefright-plugins" remote="androvm" name="platform_external_stagefright-plugins" revision="genymotion-dev" />
+  <!--github上未找到，则换成android-x86官网上的-->
+  <project path="external/ffmpeg" remote="android-x86" name="external-ffmpeg" revision="kitkat-x86" />
+  <!--http://git.osdn.net/view?p=android-x86/external-stagefright-plugins.git;a=summary-->
+  <project path="external/stagefright-plugins" remote="android-x86" name="external-stagefright-plugins" revision="kitkat-x86" />
 
 </manifest>
+

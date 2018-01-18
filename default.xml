@@ -14,6 +14,9 @@
   <remote  name="github"
            fetch="https://github.com/" />
 		   
+  <remote  name="AndroidEmu"
+           fetch="git://github.com/AndroidEmu/" />
+		   
   <remote  name="android-x86"
            fetch="git://git.osdn.net/gitroot/android-x86/" />
 
@@ -26,12 +29,12 @@
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="platform/art" />
-  <project path="bionic" remote="androvm" name="platform_bionic" revision="genymotion-4.4_r1" groups="pdk" />
+  <project path="bionic" remote="AndroidEmu" name="platform_bionic" revision="genymotion-4.4.4_r1" groups="pdk" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" remote="androvm" name="platform_bootable_diskinstaller" revision="genymotion-4.4.4_r1" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="cts" remote="androvm" name="platform_cts" revision="genymotion-4.4.4_r1" groups="cts" />
-  <project path="dalvik" remote="androvm" name="platform_dalvik" revision="genymotion-4.4.2_r1" />
+  <project path="dalvik" remote="AndroidEmu" name="platform_dalvik" revision="genymotion-4.4.4_r1" />
   <project path="developers/build" name="platform/developers/build" />
   <project path="developers/demos" name="platform/developers/demos" />
   <project path="developers/docs" name="platform/developers/docs" />
@@ -255,14 +258,14 @@
   <project path="external/valgrind" name="platform/external/valgrind" groups="pdk" />
   <project path="external/webp" name="platform/external/webp" />
   <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
-  <project path="external/wpa_supplicant_8" remote="androvm" name="platform_external_wpa_supplicant_8" groups="pdk" revision="genymotion-4.4.2_r1" />
+  <project path="external/wpa_supplicant_8" remote="AndroidEmu" name="platform_external_wpa_supplicant_8" groups="pdk" revision="genymotion-4.4.4_r1" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" />
   <project path="external/yaffs2" name="platform/external/yaffs2" groups="pdk" />
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" />
-  <project path="frameworks/av" remote="androvm" name="platform_frameworks_av" revision="genymotion-4.3_r3.1" groups="pdk" />
-  <project path="frameworks/base" remote="github" name="AndroidEmu/platform_frameworks_base" revision="genymotion-4.4.4_r1" />
+  <project path="frameworks/av" remote="AndroidEmu" name="platform_frameworks_av" revision="genymotion-4.4.4_r1" groups="pdk" />
+  <project path="frameworks/base" remote="AndroidEmu" name="platform_frameworks_base" revision="genymotion-4.4.4_r1" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -294,7 +297,7 @@
   <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" groups="broadcom_wlan" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
-  <project path="hardware/libhardware" remote="androvm" name="platform_hardware_libhardware" revision="genymotion-4.4.2_r1" groups="pdk" />
+  <project path="hardware/libhardware" remote="AndroidEmu" name="platform_hardware_libhardware" revision="genymotion-4.4.4_r1" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
   <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom" />
   <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
@@ -436,11 +439,8 @@
   <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" />
   <project path="prebuilts/runtime" name="platform/prebuilts/runtime" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
-  <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
-  <!--有4.4.2版本：genymotion-4.4.2_r1
-  但manifest 4.4.4版本使用了官方版本
-  -->
-  <project path="sdk" name="platform/sdk" />
+  <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />  
+  <project path="sdk" remote="AndroidEmu" name="platform_sdk" revision="genymotion-4.4.4_r1"/>
   <project path="system/core" remote="androvm" name="platform_system_core" revision="genymotion-4.4.4_r1" groups="pdk" />
   <project path="system/extras" remote="androvm" name="platform_system_extras" revision="genymotion-4.4.4_r1" groups="pdk" />
   <project path="system/media" name="platform/system/media" groups="pdk" />
@@ -460,9 +460,10 @@
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="external/busybox" remote="androvm" name="platform_external_busybox" revision="genymotion-4.3_r3.1" />
   <!-- Genymotion device !-->
-  <project path="device/androVM" remote="androvm" name="device_androVM" revision="genymotion-4.4.4_r1" />
+  <project path="device/androVM" remote="AndroidEmu" name="device_androVM" revision="genymotion-4.4.4_r1" />
   <!-- File manager from CyanogenMod !-->
   <project path="packages/apps/CMFileManager" remote="github" name="CyanogenMod/android_packages_apps_CMFileManager" revision="cm-11.0" />
+  <project path="external/libtruezip" remote="github" name="CyanogenMod/android_external_libtruezip " revision="cm-11.0" />
   <!-- Super user app & dependencies from Koushik Dutta !-->
   <project path="external/apps/Superuser" remote="androvm" name="platform_packages_apps_Superuser" revision="genymotion-4.4.2_r1" />
   <project path="external/apps/Widgets" remote="github" name="koush/Widgets" revision="master" />
@@ -470,7 +471,7 @@
   <!--github上未找到，则换成android-x86官网上的-->
   <project path="external/ffmpeg" remote="android-x86" name="external-ffmpeg" revision="kitkat-x86" />
   <!--http://git.osdn.net/view?p=android-x86/external-stagefright-plugins.git;a=summary-->
-  <project path="external/stagefright-plugins" remote="android-x86" name="external-stagefright-plugins" revision="kitkat-x86" />
+  <!--project path="external/stagefright-plugins" remote="android-x86" name="external-stagefright-plugins" revision="kitkat-x86" /-->
 
 </manifest>
 
